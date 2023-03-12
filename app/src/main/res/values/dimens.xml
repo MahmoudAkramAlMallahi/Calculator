@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="btn_radius">12dp</dimen>
+    <dimen name="size_text_number">20sp</dimen>
+    <dimen name="multiples_four_4x">16dp</dimen>
+    <dimen name="size_text_result">40sp</dimen>
+    <dimen name="multiples_four_3x">12dp</dimen>
+</resources>

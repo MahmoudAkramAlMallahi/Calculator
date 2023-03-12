@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/root_background"
+    tools:context=".MainActivity">
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/main_cg_from"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:singleSelection="true"
+        app:selectionRequired="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+        <com.google.android.material.chip.Chip
+            android:id="@+id/main_chip_bin"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="wrap_content"
+            android:textColor="@color/text_letter"
+            android:layout_height="wrap_content"
+            android:text="@string/chip_bin"/>
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/main_chip_dec"
+            android:layout_width="wrap_content"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:textColor="@color/text_letter"
+            android:layout_height="wrap_content"
+            android:text="@string/chip_dec"/>
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/main_chip_oct"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_letter"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:text="@string/chip_oct"/>
+        <com.google.android.material.chip.Chip
+            android:id="@+id/main_chip_hex"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="wrap_content"
+            android:textColor="@color/text_letter"
+            android:layout_height="wrap_content"
+            android:text="@string/chip_hex"/>
+    </com.google.android.material.chip.ChipGroup>
+
+    <ImageView
+        android:id="@+id/main_iv_restart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="@id/main_cg_from"
+        app:layout_constraintEnd_toEndOf="@id/main_cg_from"
+        app:layout_constraintTop_toBottomOf="@id/main_cg_from"
+        android:src="@drawable/baseline_restart"/>
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/main_cg_to"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:singleSelection="true"
+        android:visibility="gone"
+        app:selectionRequired="true"
+        app:layout_constraintStart_toStartOf="@id/main_cg_from"
+        app:layout_constraintTop_toBottomOf="@id/main_iv_restart"
+        app:layout_constraintEnd_toEndOf="@id/main_cg_from">
+        <com.google.android.material.chip.Chip
+            android:id="@+id/main_chip_toBin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_letter"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:text="@string/chip_bin"/>
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/main_chip_toDex"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_letter"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:text="@string/chip_dec"/>
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/main_chip_toOct"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_letter"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:text="@string/chip_oct"/>
+        <com.google.android.material.chip.Chip
+            android:id="@+id/main_chip_toHex"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_letter"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:text="@string/chip_hex"/>
+    </com.google.android.material.chip.ChipGroup>
+
+    <TextView
+        android:id="@+id/main_tv_number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textSize="@dimen/size_text_number"
+        android:gravity="end"
+        android:paddingEnd="@dimen/multiples_four_4x"
+        android:layout_marginBottom="@dimen/multiples_four_4x"
+        android:singleLine="true"
+        android:maxLength="7"
+        android:fontFamily="@font/inter_regular"
+        app:layout_constraintBottom_toTopOf="@id/main_tv_result"/>
+
+    <TextView
+        android:id="@+id/main_tv_result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:textColor="@color/white"
+        android:textSize="@dimen/size_text_result"
+        android:gravity="end"
+        android:paddingEnd="@dimen/multiples_four_4x"
+        android:layout_marginBottom="@dimen/multiples_four_4x"
+        android:singleLine="true"
+        android:fontFamily="@font/inter_regular"
+        app:layout_constraintBottom_toTopOf="@id/main_conLayout"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main_conLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/multiples_four_3x"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/main_btn_AC"
+            style="@style/normalButton.styleBtnLetters"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/selector_chips_letters"
+            android:onClick="onChickDeleteAllNumber"
+            android:enabled="true"
+            android:text="@string/btn_AC"
+            app:layout_constraintEnd_toStartOf="@+id/main_btn_F"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/main_btn_F"
+            style="@style/normalButton.styleBtnLetters"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/selector_chips_letters"
+            android:text="@string/btn_letterF"
+            android:onClick="onClickNumber"
+            app:layout_constraintEnd_toStartOf="@+id/main_btn_E"
+            app:layout_constraintStart_toEndOf="@+id/main_btn_AC"
+            app:layout_constraintTop_toTopOf="@id/main_btn_AC" />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/main_btn_E"
+            style="@style/normalButton.styleBtnLetters"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/selector_chips_letters"
+            android:text="@string/btn_letterE"
+            android:onClick="onClickNumber"
+            app:layout_constraintEnd_toStartOf="@+id/main_btn_D"
+            app:layout_constraintStart_toEndOf="@+id/main_btn_F"
+            app:layout_constraintTop_toTopOf="@+id/main_btn_F" />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/main_btn_D"
+            style="@style/normalButton.styleBtnLetters"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/selector_chips_letters"
+            android:text="@string/btn_letterD"
+            android:onClick="onClickNumber"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/main_btn_E"
+            app:layout_constraintTop_toTopOf="@id/main_btn_F" />
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/main_btn_7"
+            style="@style/normalButton.styleBtnNumbers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/btn_number7"
+            android:onClick="onClickNumber"
+            android:background="@drawable/selector_chips"
+            app:layout_constraintEnd_toEndOf="@+id/main_btn_AC"
+            app:layout_constraintStart_toStartOf="@id/main_btn_AC"
+            app:layout_constraintTop_toBottomOf="@id/main_btn_AC" />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/main_btn_8"
+            style="@style/normalButton.styleBtnNumbers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/selector_chips"
+            android:text="@string/btn_number8"
+            android:onClick="onClickNumber"
+            app:layout_constraintEnd_toEndOf="@+id/main_btn_F"
+            app:layout_constraintStart_toStartOf="@id/main_btn_F"
+            app:layout_constraintTop_toTopOf="@id/main_btn_7" />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/main_btn_9"
+            style="@style/normalButton.styleBtnNumbers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/selector_chips"
+            android:text="@string/btn_number9"
+            android:onClick="onClickNumber"
+            app:layout_constraintEnd_toEndOf="@+id/main_btn_E"
+            app:layout_constraintStart_toStartOf="@id/main_btn_E"
+            app:layout_constraintTop_toTopOf="@id/main_btn_8" />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/main_btn_C"
+            style="@style/normalButton.styleBtnLetters"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/selector_chips_letters"
+            android:text="@string/btn_letterC"
+            android:onClick="onClickNumber"
+            app:layout_constraintEnd_toEndOf="@+id/main_btn_D"
+            app:layout_constraintStart_toStartOf="@id/main_btn_D"
+            app:layout_constraintTop_toTopOf="@id/main_btn_9" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/main_btn_4"
+            style="@style/normalButton.styleBtnNumbers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/selector_chips"
+            android:text="@string/btn_number4"
+            android:onClick="onClickNumber"
+            app:layout_constraintEnd_toEndOf="@+id/main_btn_7"
+            app:layout_constraintStart_toStartOf="@id/main_btn_7"
+            app:layout_constraintTop_toBottomOf="@id/main_btn_7" />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/main_btn_5"
+            style="@style/normalButton.styleBtnNumbers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/selector_chips"
+            android:text="@string/btn_number5"
+            android:onClick="onClickNumber"
+            app:layout_constraintEnd_toEndOf="@+id/main_btn_8"
+            app:layout_constraintStart_toStartOf="@id/main_btn_8"
+            app:layout_constraintTop_toTopOf="@id/main_btn_4" />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/main_btn_6"
+            style="@style/normalButton.styleBtnNumbers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/selector_chips"
+            android:text="@string/btn_number6"
+            android:onClick="onClickNumber"
+            app:layout_constraintEnd_toEndOf="@+id/main_btn_9"
+            app:layout_constraintStart_toStartOf="@id/main_btn_9"
+            app:layout_constraintTop_toTopOf="@id/main_btn_5" />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/main_btn_B"
+            style="@style/normalButton.styleBtnLetters"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/selector_chips_letters"
+            android:text="@string/btn_letterB"
+            android:onClick="onClickNumber"
+            app:layout_constraintEnd_toEndOf="@+id/main_btn_C"
+            app:layout_constraintStart_toStartOf="@id/main_btn_C"
+            app:layout_constraintTop_toTopOf="@id/main_btn_6" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/main_btn_1"
+            style="@style/normalButton.styleBtnNumbers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/selector_chips"
+            android:text="@string/btn_number1"
+            android:onClick="onClickNumber"
+            app:layout_constraintEnd_toEndOf="@+id/main_btn_4"
+            app:layout_constraintStart_toStartOf="@id/main_btn_4"
+            app:layout_constraintTop_toBottomOf="@id/main_btn_4" />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/main_btn_2"
+            style="@style/normalButton.styleBtnNumbers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/selector_chips"
+            android:text="@string/btn_number2"
+            android:onClick="onClickNumber"
+            app:layout_constraintEnd_toEndOf="@+id/main_btn_5"
+            app:layout_constraintStart_toStartOf="@id/main_btn_5"
+            app:layout_constraintTop_toTopOf="@id/main_btn_1" />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/main_btn_3"
+            style="@style/normalButton.styleBtnNumbers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/selector_chips"
+            android:text="@string/btn_number3"
+            android:onClick="onClickNumber"
+            app:layout_constraintEnd_toEndOf="@+id/main_btn_6"
+            app:layout_constraintStart_toStartOf="@id/main_btn_6"
+            app:layout_constraintTop_toTopOf="@id/main_btn_2" />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/main_btn_A"
+            style="@style/normalButton.styleBtnLetters"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/selector_chips_letters"
+            android:text="@string/btn_letterA"
+            android:onClick="onClickNumber"
+            app:layout_constraintEnd_toEndOf="@+id/main_btn_B"
+            app:layout_constraintStart_toStartOf="@id/main_btn_B"
+            app:layout_constraintTop_toTopOf="@id/main_btn_3" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/main_btn_0"
+            style="@style/normalButton.styleBtnNumbers"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/selector_chips"
+            android:onClick="onClickNumber"
+            android:text="@string/btn_number0"
+            app:layout_constraintEnd_toEndOf="@+id/main_btn_2"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@id/main_btn_1"
+            app:layout_constraintTop_toBottomOf="@id/main_btn_1" />
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/main_btn_deleteOneElement"
+            style="@style/normalButton.styleBtnLetters"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/selector_chips_letters"
+            android:src="@drawable/outline_backspace_24"
+            android:onClick="onChickDeleteOneNumber"
+            app:layout_constraintEnd_toEndOf="@+id/main_btn_A"
+            app:layout_constraintStart_toStartOf="@id/main_btn_3"
+            app:layout_constraintTop_toTopOf="@id/main_btn_0"
+            app:layout_constraintBottom_toBottomOf="@id/main_btn_0"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

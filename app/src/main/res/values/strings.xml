@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Calculator</string>
+    <string name="btn_AC">Ac</string>
+    <string name="btn_letterF">F</string>
+    <string name="btn_letterE">E</string>
+    <string name="btn_letterD">D</string>
+    <string name="btn_number9">9</string>
+    <string name="btn_number7">7</string>
+    <string name="btn_number3">3</string>
+    <string name="btn_number4">4</string>
+    <string name="btn_number5">5</string>
+    <string name="btn_number6">6</string>
+    <string name="btn_letterC">C</string>
+    <string name="btn_letterB">B</string>
+    <string name="btn_number1">1</string>
+    <string name="btn_number2">2</string>
+    <string name="btn_letterA">A</string>
+    <string name="btn_number0">0</string>
+    <string name="btn_equal">=</string>
+    <string name="btn_number8">8</string>
+    <string name="chip_dec">Dec</string>
+    <string name="chip_bin">Bin</string>
+    <string name="chip_oct">Oct</string>
+    <string name="chip_hex">Hex</string>
+</resources>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="normalButton">
+        <item name="android:textSize">24dp</item>
+        <item name="android:paddingHorizontal">8dp</item>
+        <item name="android:paddingVertical">12dp</item>
+        <item name="fontFamily">@font/inter_regular</item>
+        <item name="android:enabled">false</item>
+    </style>
+
+    <style name="normalButton.styleBtnLetters">
+        <item name="android:textColor">@color/text_letter</item>
+    </style>
+
+    <style name="normalButton.styleBtnNumbers">
+        <item name="android:textColor">@color/text_number</item>
+        <item name="background">@drawable/selector_chips</item>
+    </style>
+
+
+</resources>
+
